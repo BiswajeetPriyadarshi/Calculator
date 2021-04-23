@@ -20,7 +20,10 @@ def total():
         expression=""
     except Exception as e:
         var.set("")
-
+def back():
+    global expression
+    expression = expression[:-1]
+    var.set(expression)
     
 def clear():
     global expression
@@ -32,7 +35,7 @@ e=Entry(root,textvar=var,font='lucida 25 bold').grid(row=1,column=0,columnspan="
 
 b1=Button(root,font='lucida 48 bold',width="2", text="C",command=clear).grid(row=2,column=0)
 b2=Button(root,font='lucida 48 bold',width="2", text="%",command=lambda:press("%")).grid(row=2,column=1)
-b3=Button(root,font='lucida 48 bold',width="2", text="x",command=lambda:press("x")).grid(row=2,column=2)
+b3=Button(root,font='lucida 48 bold',width="2", text="x",command=back).grid(row=2,column=2)
 b4=Button(root,font='lucida 48 bold',width="2", text="/",command=lambda:press("/")).grid(row=2,column=3)
 b5=Button(root,font='lucida 48 bold',width="2", text="7",command=lambda:press("7")).grid(row=3,column=0)
 b6=Button(root,font='lucida 48 bold', width="2",text="8",command=lambda:press("8")).grid(row=3,column=1)
